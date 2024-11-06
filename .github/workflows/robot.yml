@@ -22,13 +22,10 @@ jobs:
         pip install robotframework-requests
         pip install Faker
         pip install robotframework-seleniumlibrary
-
-    - name: Criar diretório de logs
-      run: mkdir -p logs
         
     - name: Executando os testes de API do Robot
       run: |
-        robot -d ./logs ./companyweb.robot
+        robot -d results
       
     - name: Salvar resultado dos testes
       uses: actions/upload-artifact@v4
@@ -36,5 +33,3 @@ jobs:
       with:
         name: robot-results
         path: ./results
-
- 
