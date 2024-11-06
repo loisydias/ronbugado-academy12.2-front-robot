@@ -3,7 +3,7 @@ name: Robot Framework Tests
 on: push
 
 jobs:
-  test:
+  tests:
     name: API Tests
     runs-on: ubuntu-latest
 
