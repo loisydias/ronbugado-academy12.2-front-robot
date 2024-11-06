@@ -25,11 +25,11 @@ jobs:
         
     - name: Executando os testes de API do Robot
       run: |
-        robot -d results/tests
+        robot -d logs/ tests/
       
     - name: Salvar resultado dos testes
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
-        name: robot-results
-        path: ./results
+        name: robot-logs
+        path: ./logs
